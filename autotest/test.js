@@ -1,20 +1,14 @@
-describe("положительная степень", () => {
-  it("возводит 2 в степень 3", () => {
-    assert.equal(power(2, 3), 8);
+describe("проверка функции", () => {
+  it("Milk34Sweets3.67Choc38.04Dsdw0.99kkkk0.09", () => {
+    assert.equal(sum("Milk34Sweets3.67Choc38.04Dsdw0.99kkkk0.09"), 76.79);
   });
-  it("возводит 5 в степень 2", () => {
-    assert.equal(power(5, 2), 25);
+  it("Milk34Sweets3.67Choc12.538.04Dsdw0.99kkkk0.09", () => {
+    assert.equal(
+      sum("Milk34Sweets3.67Choc12.538.04Dsdw0.99kkkk0.09"),
+      12576.79
+    );
   });
-});
-
-describe("отрицательная степень", () => {
-  it("возводит 2 в степень -3", () => {
-    assert.isNaN(power(2, -3));
-  });
-});
-
-describe("дробная степень", () => {
-  it("возводит 2 в степень 1.5", () => {
-    assert.isNaN(power(2, 1.5));
+  it("Milk1Sweets3Choc12Dsdw1000000kkkk0", () => {
+    assert.equal(sum("Milk1Sweets3Choc12Dsdw1000000kkkk0"), 1000016);
   });
 });

@@ -1,11 +1,20 @@
-function power(a, b) {
-  if (b < 0 || (b * 10) % 10 != 0) {
-    return NaN;
-  }
+function sum(s) {
+  const regex = /[A-Za-z]+/;
+  const arr = s.split(regex).slice(1);
+  const newArr = arr.map((el) => {
+    if (el.length <= 4) {
+      return Number(el);
+    }
 
-  res = a;
-  for (let pow = 0; pow < b - 1; pow++) {
-    res *= a;
-  }
-  return res;
+    if (el[el.length - 3] === ".") {
+      return Number(
+        el.slice(0, el.length - 3).replace(".", "") +
+          "." +
+          el.slice(el.length - 2)
+      );
+    }
+    return Number(el.replace(".", ""));
+  });
+
+  return newArr.reduce((ac, val) => ac + val, 0);
 }
