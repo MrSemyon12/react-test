@@ -1,5 +1,5 @@
 describe("Проверка функции sum", () => {
-  describe("Корректные тесты:", () => {
+  describe("Ожидание равенства:", () => {
     it("Milk34Sweets3.67Choc38.04Dsdw0.99kkkk0.09", () => {
       assert.equal(sum("Milk34Sweets3.67Choc38.04Dsdw0.99kkkk0.09"), 76.79);
     });
@@ -17,6 +17,10 @@ describe("Проверка функции sum", () => {
 
     it("a1b2c3d4e5f6.06", () => {
       assert.equal(sum("a1b2c3d4e5f6.06"), 21.06);
+    });
+
+    it("apple0.01apple0.10", () => {
+      assert.equal(sum("apple0.01apple0.10"), 0.11);
     });
 
     it("a234b1.544c149.000.345.33d0.45e5f123.06", () => {
@@ -58,6 +62,10 @@ describe("Проверка функции sum", () => {
 
     it("apple1.2", () => {
       chai.expect(() => sum("apple1.2")).to.throw();
+    });
+
+    it("apple0.00", () => {
+      chai.expect(() => sum("apple0.00")).to.throw();
     });
   });
 });

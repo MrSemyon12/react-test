@@ -4,7 +4,7 @@ function sum(s) {
   if (arr.length == 0) throw Error("wrong format");
 
   regex =
-    /^[1-9][0-9]{0,2}(\.[0-9]{3})*(\.(?:[0-9][1-9]|[1-9][0-9]))?$|^0(\.[0-9]{2})?$/;
+    /^[1-9][0-9]{0,2}(\.[0-9]{3})*(\.(?:[0-9][1-9]|[1-9][0-9]))?$|^0(\.(?:[0-9][1-9]|[1-9][0-9]))?$/;
 
   const newArr = arr.map((el) => {
     if (!regex.test(el)) throw Error("wrong format");
