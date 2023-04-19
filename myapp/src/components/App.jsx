@@ -1,8 +1,10 @@
-import Todo from "./Todo";
-import "../css/App.css";
+import Todo from "./Todo/Todo";
+import Button from "./Button/Button";
+import "../css/App.scss";
+import { useState } from "react";
 
 function App() {
-  const todos = [
+  const [todos, setDone] = useState([
     {
       id: 1,
       taskTitle: "ДЗ",
@@ -20,16 +22,28 @@ function App() {
       id: 3,
       taskTitle: "Готовка",
       taskDescription: "Приготовить ужин",
-      doneFlag: false,
+      doneFlag: true,
     },
-  ];
+  ]);
+
+  const changeDone = (id) => {
+    setDone(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.doneFlag = !todo.doneFlag;
+        }
+        return todo;
+      })
+    );
+  };
 
   return (
-    <div className="App">
+    <div className="app">
       {todos.map((todo) => (
-        <Todo key={todo.id} {...todo} />
+        <Todo key={todo.id} {...todo} func={changeDone} />
       ))}
     </div>
+    // <Button />
   );
 }
 

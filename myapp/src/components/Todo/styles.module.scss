@@ -1,0 +1,21 @@
+.color_grey {
+  text-decoration: line-through;
+}
+
+.todo {
+  width: 700px;
+  margin: 5px;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: bisque;
+  border: 10px solid brown;
+  display: flex;
+  justify-content: space-between;
+}
+.block {
+  display: flex;
+  margin: auto;
+}
+@mixin textColor {
+  color: yellow;
+}
