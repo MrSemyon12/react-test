@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const getRandomColor = () => {
   const rColor = () => Math.floor(Math.random() * 256);
@@ -18,7 +18,10 @@ export default function Button() {
       style={{ width: 300, height: 60, backgroundColor }}
       onClick={handleButton}
     >
-      <h1>rgbButton | {counter}</h1>
+      <h1>
+        rgbButton |
+        {counter}
+      </h1>
     </button>
   );
 }

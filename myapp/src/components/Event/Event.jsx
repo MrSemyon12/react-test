@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState } from 'react';
 
 const getRandomColor = () => {
   const rColor = () => Math.floor(Math.random() * 256);
@@ -12,7 +12,7 @@ export default function Event() {
   return (
     <div>
       <div
-        style={{ width: "500px", height: "500px", backgroundColor }}
+        style={{ width: '500px', height: '500px', backgroundColor }}
         onMouseEnter={() => {
           setBackgroundColor(getRandomColor());
         }}
@@ -22,9 +22,14 @@ export default function Event() {
         onMouseMove={(event) => {
           setMousePos({ x: event.clientX, y: event.clientY });
         }}
-      ></div>
+      />
       <h1>
-        x = {mousePos.x}, y = {mousePos.y}
+        x =
+        {' '}
+        {mousePos.x}
+        , y =
+        {' '}
+        {mousePos.y}
       </h1>
     </div>
   );

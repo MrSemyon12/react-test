@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
 export default function Todo(props) {
@@ -23,3 +24,11 @@ export default function Todo(props) {
     </div>
   );
 }
+
+Todo.propTypes = {
+  id: PropTypes.number.isRequired,
+  taskTitle: PropTypes.string.isRequired,
+  taskDescription: PropTypes.string.isRequired,
+  doneFlag: PropTypes.bool.isRequired,
+  func: PropTypes.func.isRequired,
+};

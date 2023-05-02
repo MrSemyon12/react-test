@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styles from "./styles.module.scss";
+import React, { useState } from 'react';
+import styles from './styles.module.scss';
 
 export default function Form(props) {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
