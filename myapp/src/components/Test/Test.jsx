@@ -1,22 +1,47 @@
-import React, { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Test() {
-  const [counter, setCounter] = useState(+localStorage.getItem("test") ?? 0);
+  //   axios
+  //     .get("https://jsonplaceholder.typicode.com/posts")
+  //     .then((response) => console.log(response.data));
+
+  //   const user = { id: 1, name: "John", age: 12 };
+  //   axios
+  //     .post("/api/user", user)
+  //     .then((response) => console.log(response.data))
+  //     .catch((error) => console.log(error));
+  //   const config = {
+  //     method: "post",
+  //     url: "/api/user",
+  //     data: user,
+  //   };
+  //   axios(config);
+
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function getData() {
+    setIsLoading(true);
+    setTimeout(async () => {
+      try {
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users/1"
+        );
+
+        setData(response.data);
+      } catch (error) {
+        setError(true);
+      }
+      setIsLoading(false);
+    }, 2000);
+  }
 
   useEffect(() => {
-    localStorage.setItem("test", counter);
-  }, [counter]);
+    setError(false);
+    getData();
+  }, []);
 
-  useEffect(() => {
-    console.log("Загружаю компонент Test...");
-    const id = setInterval(() => console.log("Дкмаю..."), 3000);
-    return () => clearInterval(id);
-  });
-
-  return (
-    <div>
-      <div>{counter}</div>
-      <button onClick={() => setCounter(counter + 1)}>Button</button>
-    </div>
-  );
+  return <>{error ? "ОЙ!" : isLoading ? "Loading..." : JSON.stringify(data)}</>;
 }
