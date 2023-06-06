@@ -1,15 +1,26 @@
-import Page from "./Page";
-import { Provider } from "react-redux";
-import store from "../store/index.js";
 import "../css/App.scss";
+import { ButtonGradientCuston } from "../styled/buttonGradient/ButtonGradientCustom";
+import { createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: grey;
+  }
+`;
+
+const theme = {
+  color: {
+    prime: "orange",
+  },
+};
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="app">
-        <Page />
-      </div>
-    </Provider>
+    <div>
+      <GlobalStyle />
+      <ButtonGradientCuston>Button</ButtonGradientCuston>
+    </div>
   );
 }
 

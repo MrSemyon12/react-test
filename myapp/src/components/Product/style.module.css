@@ -1,0 +1,7 @@
+.description {
+  transition: 0.5s;
+}
+
+.hide {
+  transform: translateY(100%);
+}
