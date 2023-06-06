@@ -58,7 +58,7 @@ _курсив_ **_жир_**
 
 ---
 
-- [] Checkbox not checked
+- [ ] Checkbox not checked
 - [x] Checkbox checked
 
 <http://google.com>
